@@ -357,7 +357,7 @@ class OrderIntegrationTest {
     void test8() {
         // when
         ResponseEntity<OrderDto[]> response = restTemplate.getForEntity(
-                "/Order",
+                "/orders",
                 OrderDto[].class);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());

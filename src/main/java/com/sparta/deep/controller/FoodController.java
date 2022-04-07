@@ -2,7 +2,6 @@ package com.sparta.deep.controller;
 
 import com.sparta.deep.model.Food;
 import com.sparta.deep.repository.FoodRepository;
-import com.sparta.deep.repository.RestaurantRepository;
 import com.sparta.deep.requestDto.FoodRequestDto;
 import com.sparta.deep.service.FoodService;
 import lombok.RequiredArgsConstructor;

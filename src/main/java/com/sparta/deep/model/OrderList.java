@@ -1,10 +1,9 @@
 package com.sparta.deep.model;
 
-import com.sparta.deep.requestDto.OrderRequestDto;
+import com.sparta.deep.requestDto.FoodOrderDto;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @Setter
@@ -12,18 +11,23 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
-public class FoodOrder {
+public class OrderList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String restaurantName;
+    private int quantity;
 
     @Column(nullable = false)
-    private int totalPrice;
+    private String name;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Order_id")
-    private List<OrderList> foods;
+    @Column(nullable = false)
+    private int price;
+
+    @ManyToOne
+    private Food food;
+
+    @ManyToOne
+    private FoodOrder foodOrder;
 }
